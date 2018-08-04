@@ -16,10 +16,10 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        $articles = Article::paginate(9);
+        $artikels = Article::paginate(9);
         // $articles = DB::table('articles')->whereLive(1)->get();
 
-        return view('articles.index',compact('articles'));
+        return view('articles.index',compact('artikels'));
     }
 
     /**
@@ -59,7 +59,8 @@ class ArticlesController extends Controller
      */
     public function show($id)
     {
-        //
+        $article = Article::findOrFail($id);
+        return view('articles.show',compact('article'));
     }
 
     /**
