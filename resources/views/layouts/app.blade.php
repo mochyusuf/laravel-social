@@ -11,7 +11,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.css" />
 
     <!-- Scripts -->
     <script>
@@ -59,6 +60,26 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                
+                                    <li>
+                                        <a href="/home">Home</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/profile/{{Auth::user()->name}}">Profile
+                                        </a>
+                                    </li>
+                                    
+                                    <hr>
+
+                                    <li>
+                                        <a href="/articles/create">Create Article</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/articles">Feed</a>
+                                    </li>
+
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();

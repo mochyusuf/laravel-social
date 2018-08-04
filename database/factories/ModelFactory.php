@@ -22,3 +22,17 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Article::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        'id' => null,
+        'user_id' => '1',
+        'content' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
+        'created_at' => $faker->dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null),
+        'updated_at' => $faker->dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null),
+        'live' => $faker->boolean($chanceOfGettingTrue = 70),
+        'posts_on' => $faker->dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null),
+    ];
+});

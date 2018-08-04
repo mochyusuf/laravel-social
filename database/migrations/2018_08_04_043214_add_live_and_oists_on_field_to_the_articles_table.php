@@ -27,7 +27,7 @@ class AddLiveAndOistsOnFieldToTheArticlesTable extends Migration
     public function down()
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->dropColumn(['live','post_on']);
+            $table->dropColumn(['live','posts_on']);
         });
     }
 }
