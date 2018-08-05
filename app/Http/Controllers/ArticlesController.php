@@ -19,6 +19,7 @@ class ArticlesController extends Controller
         $artikels = Article::paginate(9);
         // $articles = DB::table('articles')->whereLive(1)->get();
 
+        // return $artikels;
         return view('articles.index',compact('artikels'));
     }
 
@@ -103,6 +104,13 @@ class ArticlesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Article::destroy($id);
+
+        return redirect('/articles');
+    }
+
+    public function restore($id){
+        $article = Article::findOrFail($id);
+        $article->restore();
     }
 }

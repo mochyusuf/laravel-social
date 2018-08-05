@@ -18,6 +18,18 @@
                 </div>
 
                 <div class="panel-footer">
+
+                    @if($artikel->user_id == Auth::id())
+                        <form action="/articles/{{$artikel->id}}" style="margin-left:25px" class="pull-right" method="POST">
+
+                            {{csrf_field()}}
+                            {{method_field('DELETE')}}
+                            <button class="btn btn-danger btn-sm">
+                                Delete
+                            </button>
+                        </form>
+                    @endif
+
                     <i class="fa fa-heart pull-right clearfix"></i>
                 </div>
             </div>

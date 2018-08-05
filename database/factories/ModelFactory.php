@@ -33,6 +33,6 @@ $factory->define(App\Article::class, function (Faker\Generator $faker) {
         'created_at' => $faker->dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null),
         'updated_at' => $faker->dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null),
         'live' => $faker->boolean($chanceOfGettingTrue = 70),
-        'posts_on' => $faker->dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null),
+        // 'posts_on' => $faker->dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null)
     ];
 });
